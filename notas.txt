@@ -1,0 +1,8 @@
+agregar primeros pasos con kinderbot al asistente
+
+ng build --prod --base-href /educacion/ para produccion y build
+
+DirectoryIndex index.html para htaccess
+
+
+ESTE ES EL QUE SIRVE PARA SUBIR A ROBOTICA
