@@ -47,6 +47,7 @@ export class FirstStepsComponent implements OnInit {
     ,mblock_win_r1_1: 'Lo primero que debemos hacer es quitar el dispositivo Codey haciendo un clic sobre la cruz que tiene. Luego hacer clic sobre el botón borrar.'
     ,mblock_win_r1_3: 'Arrastrar el archivo descargado hasta el mBlock para proceder con la instalación de la última versión del Core R1.'
     ,mblock_win_r1_4: 'Hacer un clic sobre el botón añadir. Buscar el dispositivo Core R1. Hacer un clic sobre el dispositivo Core R1 para luego presionar sobre la estrella que aparecerá en el borde superior izquierda.'
+    ,app_r500: 'Descargue la aplicacion para Android del kit R500 para comandar los modelos mendiante bluetooth. Para descargar presione sobre el boton "Descargar App".'
     ,mblock_win_r2: 'Los siguientes pasos haremos la configuración para que el bloque lógico Core R2 sea el dispositivo predeterminado.'
     ,mblock_win_r2_1: 'Lo primero que debemos hacer es quitar el dispositivo que viene por defecto, en algunos casos, Codey, lo retiramos haciendo un clic sobre la cruz que tiene. Luego hacer clic sobre el botón borrar.'
     ,mblock_win_r2_2: 'Una vez quitado el dispositivo por defecto, haremos clic sobre el botón "Añadir".'
@@ -122,6 +123,7 @@ export class FirstStepsComponent implements OnInit {
     ,mblock_win_r4: new UnidadEnlace({enlace: 'https://www.youtube.com/playlist?list=PLYp9GyBA5ZDpKl2uHEW4aAntcBLvkwI13', descripcion: 'Ver actividades'})
     ,mblock_win_r1_2: new UnidadEnlace({enlace: 'https://www.misladrillos.com/images/educacion/firmware/mis_ladrillos_r1.mext', descripcion: 'Descargar extensión'})
     ,mblock_win_r1_5: new UnidadEnlace({enlace: 'https://www.youtube.com/playlist?list=PLYp9GyBA5ZDrnsGg11jNeDWiH_s3xS-7m', descripcion: 'Ver actividades'})
+    ,app_r500: new UnidadEnlace({enlace: 'https://play.google.com/store/apps/details?id=com.MisLadrillosProbots.ControlR500', descripcion: 'Descargar App'})
     ,mblock_win_r8: new UnidadEnlace({enlace: 'https://www.youtube.com/watch?v=dEBZLHeQdj0&list=PLYp9GyBA5ZDowznozUHXRfCpklan2CG-J', descripcion: 'Ver en video'})
     ,mblock_win_r8_6: new UnidadEnlace({enlace: 'https://www.youtube.com/playlist?list=PLYp9GyBA5ZDpi35aEtHr_s1I4SWmCSKjV', descripcion: 'Ver actividades'})
     ,mblock_win_rp: new UnidadEnlace({enlace: 'https://www.youtube.com/watch?v=gI5j0yjSphM&list=PLYp9GyBA5ZDpQUfKigQbr1w-i9EnfWWQ1', descripcion: 'Ver en video'})
@@ -150,6 +152,7 @@ export class FirstStepsComponent implements OnInit {
     ,mblock_win_4: 'Utilizando mBlock para Windows'
     ,mblock_mac: 'Instalación de mBlock para Mac'
     ,ardublock_1: 'Instalación de ArduBlock'
+    ,app_r500: 'Descargar aplicacion para R500'
   };
 
   titulos = {
@@ -160,6 +163,7 @@ export class FirstStepsComponent implements OnInit {
     ,mblock_win_r8_2: 'Agregando el dispositivo Core R8'
     ,mblock_win_rp_2: 'Agregando el dispositivo Core R8+'
     ,mblock_win_kb_2: 'Agregando el dispositivo Kinderbot'
+    ,app_r500: 'Descargar aplicacion para Android'
     
   };
 
@@ -252,7 +256,7 @@ export class FirstStepsComponent implements OnInit {
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_7', anterior: 'mblock_win_6', cabecera: this.cabeceras.mblock_win_4, titulo: this.titulos.mblock_win_6, descripcion: this.descripciones.mblock_win_7, imagen: this.imagenes.mblock_win_7}))
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_7o1', padre: 'mblock_win_7', siguiente: 'mblock_win_kb', descripcion: 'Kinderbot'}))
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_7o2', padre: 'mblock_win_7', siguiente: 'mblock_win_r4', descripcion: 'R-400 STEAM en casa'}))
-      .agregarUnidad(new UnidadAsistente({id: 'mblock_win_7o3', padre: 'mblock_win_7', siguiente: 'mblock_win_r1', descripcion: 'Core R1'}))
+      .agregarUnidad(new UnidadAsistente({id: 'mblock_win_7o3', padre: 'mblock_win_7', siguiente: 'mblock_win_r1', descripcion: 'Core R1 (R500)'}))
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_7o4', padre: 'mblock_win_7', siguiente: 'mblock_win_r2', descripcion: 'Core R2'}))
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_7o5', padre: 'mblock_win_7', siguiente: 'mblock_win_r8', descripcion: 'Core R8'}))
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_7o6', padre: 'mblock_win_7', siguiente: 'mblock_win_rp', descripcion: 'Core R8+'}))
@@ -261,12 +265,13 @@ export class FirstStepsComponent implements OnInit {
       //mblock windwos r400
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r4', anterior: 'mblock_win_7', cabecera: this.cabeceras.mblock_win_4, titulo: 'R400 Steam en casa', descripcion: this.descripciones.mblock_win_r4, imagen: this.imagenes.mblock_win_r4, enlace: this.enlaces.mblock_win_r4}))
       //mblock windows r1
-      .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1', anterior: 'mblock_win_7', siguiente: 'mblock_win_r1_1', cabecera: this.cabeceras.mblock_win_4, titulo: 'El Core R1', descripcion: this.descripciones.mblock_win_r1, imagen: this.imagenes.mblock_win_r1}))
+      .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1', anterior: 'mblock_win_7', siguiente: 'mblock_win_r1_1', cabecera: this.cabeceras.mblock_win_4, titulo: 'El Core R1', descripcion: this.descripciones.mblock_win_r1}))
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_1', anterior: 'mblock_win_r1', siguiente: 'mblock_win_r1_2', cabecera: this.cabeceras.mblock_win_4, titulo: 'Quitando el dispositivo Codey', descripcion: this.descripciones.mblock_win_r1_1, imagen: this.imagenes.mblock_win_r1_1}))
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_2', anterior: 'mblock_win_r1_1', siguiente: 'mblock_win_r1_3', cabecera: this.cabeceras.mblock_win_4, titulo: this.titulos.mblock_win_r1_2, descripcion: 'Descargamos la última versión de la extensión del Core R1', enlace: this.enlaces.mblock_win_r1_2}))
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_3', anterior: 'mblock_win_r1_2', siguiente: 'mblock_win_r1_4', cabecera: this.cabeceras.mblock_win_4, titulo: this.titulos.mblock_win_r1_2, descripcion: this.descripciones.mblock_win_r1_3}))
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_4', anterior: 'mblock_win_r1_3', siguiente: 'mblock_win_r1_5', cabecera: this.cabeceras.mblock_win_4, titulo: this.titulos.mblock_win_r1_2, descripcion: this.descripciones.mblock_win_r1_4, imagen: this.imagenes.mblock_win_r1_4}))
-      .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_5', anterior: 'mblock_win_r1_4', cabecera: this.cabeceras.mblock_win_4, titulo: 'Felicidades', descripcion: 'Felicitaciones, ya ha finalizado todo lo necesario para comenzar a programar.', enlace: this.enlaces.mblock_win_r1_5}))
+      .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_5', anterior: 'mblock_win_r1_4', siguiente: 'mblock_win_r1_6', cabecera: this.cabeceras.app_r500, titulo: this.titulos.app_r500, descripcion: this.descripciones.app_r500, enlace: this.enlaces.app_r500}))
+      .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_6', anterior: 'mblock_win_r1_5', cabecera: this.cabeceras.mblock_win_4, titulo: 'Felicidades', descripcion: 'Felicitaciones, ya ha finalizado todo lo necesario para comenzar a programar.'}))
       //mblock windows r2
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r2', anterior: 'mblock_win_7', siguiente: 'mblock_win_r2_1', cabecera: this.cabeceras.mblock_win_4, titulo: 'El Core R2', descripcion: this.descripciones.mblock_win_r2, imagen: this.imagenes.mblock_win_r2}))
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r2_1', anterior: 'mblock_win_r2', siguiente: 'mblock_win_r2_2', cabecera: this.cabeceras.mblock_win_4, titulo: 'Quitando el dispositivo por defecto', descripcion: this.descripciones.mblock_win_r2_1, imagen: this.imagenes.mblock_win_r1_1}))
