@@ -47,7 +47,11 @@ export class FirstStepsComponent implements OnInit {
     ,mblock_win_r1_1: 'Lo primero que debemos hacer es quitar el dispositivo Codey haciendo un clic sobre la cruz que tiene. Luego hacer clic sobre el botón borrar.'
     ,mblock_win_r1_3: 'Arrastrar el archivo descargado hasta el mBlock para proceder con la instalación de la última versión del Core R1.'
     ,mblock_win_r1_4: 'Hacer un clic sobre el botón añadir. Buscar el dispositivo Core R1. Hacer un clic sobre el dispositivo Core R1 para luego presionar sobre la estrella que aparecerá en el borde superior izquierda.'
-    ,app_r500: 'Descargue la aplicacion para Android del kit R500 para comandar los modelos mendiante bluetooth. Para descargar presione sobre el boton "Descargar App".'
+    ,app_r500: 'Descargue la aplicacion para Android del kit R500 para comandar los modelos mendiante bluetooth. Para descargar presione sobre el boton "Descargar App". Luego siga los pasos para poder vincular el R500 con su telefono Android.'
+    ,app_r500_1: 'Antes de poder utilizar la aplicacion deberemos vincular el R500 con el dispositivo Android . Lo podremos encontrar como HC-05. Si nos pide una clave ingresar 1234 o 0000 y luego de esto abrir la aplicacion.'
+    ,app_r500_2: 'Una vez abierta la aplicacion deberiamos ver algo similar a la imagen. Luego presionamos sobre "CONECTAR"'
+    ,app_r500_3: 'Se abrira un dialogo donde deberá presionar sobre el botón para actualizar. Luego debera elegir el dispositvo vinculado previamente, en este caso "HC-05".'
+    ,app_r500_4: 'Una vez seleccionado debe presionar sobre "CONECTAR".'
     ,mblock_win_r2: 'Los siguientes pasos haremos la configuración para que el bloque lógico Core R2 sea el dispositivo predeterminado.'
     ,mblock_win_r2_1: 'Lo primero que debemos hacer es quitar el dispositivo que viene por defecto, en algunos casos, Codey, lo retiramos haciendo un clic sobre la cruz que tiene. Luego hacer clic sobre el botón borrar.'
     ,mblock_win_r2_2: 'Una vez quitado el dispositivo por defecto, haremos clic sobre el botón "Añadir".'
@@ -110,6 +114,8 @@ export class FirstStepsComponent implements OnInit {
     ,mblock_win_rp_7: 'assets/wizard/firststeps/add_r8_plus_4.png'
     ,ardublock_1: 'assets/wizard/firststeps/ardublock_1.png'
     //,mblock_win_kb: 'assets/wizard/firststeps/Kinderbot.jpg'
+    ,app_r500_2: 'assets/wizard/firststeps/app_r500_1.jpg'
+    ,app_r500_3: 'assets/wizard/firststeps/app_r500_2.jpg'
   };
 
   enlaces = {
@@ -141,6 +147,7 @@ export class FirstStepsComponent implements OnInit {
     ,probotlab_o3_1: new UnidadEnlace({enlace: 'https://www.misladrillos.com/descargas/probots/ProbotLab2.exe', descripcion: 'Descargar'})
     ,probotlab_o4_1: new UnidadEnlace({enlace: 'https://www.misladrillos.com/descargas/probots/ProbotLab1.exe', descripcion: 'Descargar'})
     ,probotlab_1: new UnidadEnlace({enlace: 'https://misladrillos.com/ml/proyectos/?plataforma=probotlab', descripcion: 'Ver actividades'})
+    ,app_r500_1: new UnidadEnlace({enlace: 'https://misladrillos.com/ml/proyectos/?kit=r500', descripcion: 'Ver actividades'})
 
   };
 
@@ -153,8 +160,9 @@ export class FirstStepsComponent implements OnInit {
     ,mblock_mac: 'Instalación de mBlock para Mac'
     ,ardublock_1: 'Instalación de ArduBlock'
     ,app_r500: 'Descargar aplicacion para R500'
+    ,app_r500_1: 'Uso de la apicacion R500'
   };
-
+  
   titulos = {
     inst_makecode_win: 'Instalación de MakeCode de 64 bits.'
     ,mblock_win_6: 'Reconociendo nuestro bloque lógico'
@@ -164,6 +172,7 @@ export class FirstStepsComponent implements OnInit {
     ,mblock_win_rp_2: 'Agregando el dispositivo Core R8+'
     ,mblock_win_kb_2: 'Agregando el dispositivo Kinderbot'
     ,app_r500: 'Descargar aplicacion para Android'
+    ,app_r500_1: 'Uso de la apicacion R500'
     
   };
 
@@ -270,8 +279,14 @@ export class FirstStepsComponent implements OnInit {
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_2', anterior: 'mblock_win_r1_1', siguiente: 'mblock_win_r1_3', cabecera: this.cabeceras.mblock_win_4, titulo: this.titulos.mblock_win_r1_2, descripcion: 'Descargamos la última versión de la extensión del Core R1', enlace: this.enlaces.mblock_win_r1_2}))
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_3', anterior: 'mblock_win_r1_2', siguiente: 'mblock_win_r1_4', cabecera: this.cabeceras.mblock_win_4, titulo: this.titulos.mblock_win_r1_2, descripcion: this.descripciones.mblock_win_r1_3}))
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_4', anterior: 'mblock_win_r1_3', siguiente: 'mblock_win_r1_5', cabecera: this.cabeceras.mblock_win_4, titulo: this.titulos.mblock_win_r1_2, descripcion: this.descripciones.mblock_win_r1_4, imagen: this.imagenes.mblock_win_r1_4}))
-      .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_5', anterior: 'mblock_win_r1_4', siguiente: 'mblock_win_r1_6', cabecera: this.cabeceras.app_r500, titulo: this.titulos.app_r500, descripcion: this.descripciones.app_r500, enlace: this.enlaces.app_r500}))
-      .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_6', anterior: 'mblock_win_r1_5', cabecera: this.cabeceras.mblock_win_4, titulo: 'Felicidades', descripcion: 'Felicitaciones, ya ha finalizado todo lo necesario para comenzar a programar.'}))
+      .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_5', anterior: 'mblock_win_r1_4', siguiente: 'mblock_win_r1_5_1', cabecera: this.cabeceras.app_r500, titulo: this.titulos.app_r500, descripcion: this.descripciones.app_r500, enlace: this.enlaces.app_r500}))
+      
+      .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_5_1', anterior: 'mblock_win_r1_5', siguiente: 'mblock_win_r1_5_2', cabecera: this.cabeceras.app_r500_1, titulo: this.titulos.app_r500_1, descripcion: this.descripciones.app_r500_1}))
+      .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_5_2', anterior: 'mblock_win_r1_5_1', siguiente: 'mblock_win_r1_5_3', cabecera: this.cabeceras.app_r500_1, titulo: this.titulos.app_r500_1, descripcion: this.descripciones.app_r500_2, imagen: this.imagenes.app_r500_2}))
+      .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_5_3', anterior: 'mblock_win_r1_5_2', siguiente: 'mblock_win_r1_5_4', cabecera: this.cabeceras.app_r500_1, titulo: this.titulos.app_r500_1, descripcion: this.descripciones.app_r500_3, imagen: this.imagenes.app_r500_3}))
+      .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_5_4', anterior: 'mblock_win_r1_5_3', siguiente: 'mblock_win_r1_6', cabecera: this.cabeceras.app_r500_1, titulo: this.titulos.app_r500_1, descripcion: this.descripciones.app_r500_4}))
+      
+      .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r1_6', anterior: 'mblock_win_r1_5_4', cabecera: this.cabeceras.mblock_win_4, titulo: 'Felicidades', descripcion: 'Felicitaciones, ya ha finalizado todo lo necesario para comenzar a programar.', enlace: this.enlaces.app_r500_1}))
       //mblock windows r2
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r2', anterior: 'mblock_win_7', siguiente: 'mblock_win_r2_1', cabecera: this.cabeceras.mblock_win_4, titulo: 'El Core R2', descripcion: this.descripciones.mblock_win_r2, imagen: this.imagenes.mblock_win_r2}))
       .agregarUnidad(new UnidadAsistente({id: 'mblock_win_r2_1', anterior: 'mblock_win_r2', siguiente: 'mblock_win_r2_2', cabecera: this.cabeceras.mblock_win_4, titulo: 'Quitando el dispositivo por defecto', descripcion: this.descripciones.mblock_win_r2_1, imagen: this.imagenes.mblock_win_r1_1}))
